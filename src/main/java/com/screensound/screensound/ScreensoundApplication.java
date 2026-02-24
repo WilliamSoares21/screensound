@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.screensound.screensound.principal.Principal;
 import com.screensound.screensound.repository.ArtistaRepository;
+import com.screensound.screensound.service.ConsultaGemini;
 
 @SpringBootApplication
 public class ScreensoundApplication implements CommandLineRunner {
@@ -14,13 +15,16 @@ public class ScreensoundApplication implements CommandLineRunner {
   @Autowired
   private ArtistaRepository artistaRepository;
 
+  @Autowired
+  private ConsultaGemini consultaGemini;
+
   public static void main(String[] args) {
     SpringApplication.run(ScreensoundApplication.class, args);
   }
 
   @Override
   public void run(String... args) throws Exception {
-    Principal principal = new Principal(artistaRepository);
+    Principal principal = new Principal(artistaRepository, consultaGemini);
     principal.exibeMenu();
   }
 }
