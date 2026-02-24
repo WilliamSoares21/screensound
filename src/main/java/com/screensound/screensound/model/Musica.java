@@ -35,4 +35,8 @@ public class Musica {
     return "Musica{titulo=" + titulo + ", artista=" + artista + "}";
   }
 
+  public Musica(String nomeMusica) {
+    this.titulo = nomeMusica;
+  }
+
 }

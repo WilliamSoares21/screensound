@@ -45,4 +45,8 @@ public class Artista {
     return "Artista{ nome=" + nome + ", tipo=" + tipo + ", musicas=" + musicas + "}";
   }
 
+  public Artista(String nome, TipoArtista tipoArtista) {
+    this.nome = nome;
+    this.tipo = tipoArtista;
+  }
 }
